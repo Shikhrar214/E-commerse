@@ -3,13 +3,20 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router"
-import { Home } from "./index.js";
+import { About, Home, Layout } from "./index.js";
 
 
 function App() {
   
   const router = createBrowserRouter([
-    { path: "/", element: <Home/>},      
+    { 
+      path: "", 
+      element: <Layout/>,
+      children: [
+        {path: "", element: <Home/>},
+        {path: "about", element: <About/>} 
+      ]
+    },      
   ]);
 
   return (
