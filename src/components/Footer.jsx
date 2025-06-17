@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Facebook,
-  Instagram,
-  Twitter,
-  LinkedIn,
-} from '@mui/icons-material';
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -40,21 +40,21 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media Icons using Material UI */}
+        {/* Social Media Icons using React Icons */}
         <div>
           <h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white">
-              <Facebook fontSize="medium" />
+              <FaFacebookF size={20} />
             </a>
             <a href="#" className="hover:text-white">
-              <Instagram fontSize="medium" />
+              <FaInstagram size={20} />
             </a>
             <a href="#" className="hover:text-white">
-              <Twitter fontSize="medium" />
+              <FaTwitter size={20} />
             </a>
             <a href="#" className="hover:text-white">
-              <LinkedIn fontSize="medium" />
+              <FaLinkedinIn size={20} />
             </a>
           </div>
         </div>
