@@ -1,5 +1,5 @@
 import React from 'react'
-import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar } from '../index.js'
+import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials } from '../index.js'
 
 function home() {
   return (
@@ -8,10 +8,12 @@ function home() {
       <RoundedItemCatogery/>
       <HomeTopCards/>
       <HomeCardsWithDetails/>
-      <SupportBar/>
+     <div className='lg:mx-50'>
+     <SupportBar/>
+     </div>
       <BlogPge/>
       <AllProducts/>
-      home
+      <Testimonials/>
     </div>
   )
 }

@@ -59,6 +59,26 @@ function HomeTopCards() {
   };
 
   return (
+
+    <>
+    <div className='flex justify-between mx-10'>
+      <div>
+        <h3 className='text-2xl  text-gray-800'>
+          Lorem, ipsum.
+        </h3>
+        <h1 className='text-4xl  text-gray-800'>
+          Lorem, ipsum.
+        </h1>
+      </div>
+
+      <div>
+        <button 
+        onClick={() => console.log('See All Clicked')}
+        className=' border-2 p-1'>SEE ALL</button>
+      </div>
+    </div>
+
+
     <div className="w-full py-8">
       <div className="max-w-[100vw] overflow-hidden px-4">
         <div className="flex overflow-x-auto gap-4 md:gap-6 no-scrollbar">
@@ -102,6 +122,7 @@ function HomeTopCards() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
