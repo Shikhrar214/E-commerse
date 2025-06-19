@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router"
-import { About, Home, Layout } from "./index.js";
+import { About, AllProductPage, Home, Layout, Login, SignOut, Signup } from "./index.js";
 
 
 function App() {
@@ -14,7 +14,11 @@ function App() {
       element: <Layout/>,
       children: [
         {path: "", element: <Home/>},
-        {path: "about", element: <About/>} 
+        {path: "about", element: <About/>},
+        {path: "all-products", element: <AllProductPage/>}, 
+        {path: "login", element: <Login/>},
+        {path: "signup", element: <Signup/>},
+        {path: "signout", element: <SignOut/>}, 
       ]
     },      
   ]);
