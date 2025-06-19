@@ -36,7 +36,7 @@ function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="bg-[#9c3911] px-4 py-3 flex flex-wrap items-center justify-between">
+      <div className="bg-[#9c3911] px-4 py-3 h-20 flex flex-wrap items-center justify-between">
         {/* Hamburger */}
         <div className="text-white text-xl sm:hidden cursor-pointer" onClick={toggleMobileMenu}>
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
