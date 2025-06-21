@@ -1,5 +1,6 @@
 import React from 'react'
 import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials } from '../index.js'
+// import AutoSlider from '../category/autoslider.jsx'
 
 function home() {
   return (
@@ -14,6 +15,7 @@ function home() {
       <BlogPge/>
       <AllProducts/>
       <Testimonials/>
+      <AutoSlider/>
     </div>
   )
 }

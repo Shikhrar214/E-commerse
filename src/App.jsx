@@ -4,6 +4,7 @@ import {
   RouterProvider,
 } from "react-router"
 import { About, AllProductPage, Home, Layout, Login, SignOut, Signup } from "./index.js";
+import Category from "./pages/category.jsx";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         {path: "login", element: <Login/>},
         {path: "signup", element: <Signup/>},
         {path: "signout", element: <SignOut/>}, 
+        {path: "category", element: <Category/>}, 
       ]
     },      
   ]);
