@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
 
 const categories = [
   "Water Fountains",
@@ -8,76 +9,110 @@ const categories = [
   "Wall Hangings",
   "Buddha Paintings",
   "Handicraft Items",
-  "Handicraft Items",
-  "Water Fountains",
-  "Buddha Idols",
-  "Pendulum Clocks",
-  "Wall Hangings",
-  "Buddha Paintings",
-  "Handicraft Items",
+  "Metal Crafts",
+  "Spiritual Decor",
+  "Wooden Sculptures",
+  "Festive Gifts",
+  "Tribal Art",
 ].map((title) => ({
   title,
   img: "https://images.pexels.com/photos/4272618/pexels-photo-4272618.jpeg",
 }));
 
+const ITEM_WIDTH = 180;
+
 const RoundedItemCategory = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const containerRef = useRef(null);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const controls = useAnimation();
+
+  const extendedCategories = [...categories, ...categories];
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    if (!isAutoPlaying) return;
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity,
+      },
+    });
+  }, [isAutoPlaying, controls]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % categories.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const visibleItems = [
-    ...categories.slice(startIndex),
-    ...categories.slice(0, startIndex),
-  ].slice(0, isMobile ? 3 : 5);
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      if (containerRef.current) {
+        containerRef.current.scrollBy({ left: ITEM_WIDTH, behavior: "smooth" });
+        setIsAutoPlaying(false);
+        setTimeout(() => setIsAutoPlaying(true), 4000);
+      }
+    },
+    onSwipedRight: () => {
+      if (containerRef.current) {
+        containerRef.current.scrollBy({ left: -ITEM_WIDTH, behavior: "smooth" });
+        setIsAutoPlaying(false);
+        setTimeout(() => setIsAutoPlaying(true), 4000);
+      }
+    },
+    trackMouse: true,
+  });
 
   return (
-    <section className="bg-gradient-to-r from-[#6e8572] to-[#a3b9a9] py-10">
-      <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8 tracking-wide font-sans">
-        Explore Our Craft Categories
-      </h2>
+    <section className="bg-gradient-to-r from-[#6e8572] to-[#a3b9a9] py-12 overflow-hidden relative">
+      <div className="relative z-10">
+        <motion.h2 
+          className="text-white text-3xl md:text-4xl font-bold text-center mb-12 drop-shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Explore Our Craft Categories
+        </motion.h2>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center">
-          <div className="flex space-x-4 md:space-x-6 lg:space-x-8 overflow-visible">
-            <AnimatePresence mode="popLayout">
-              {visibleItems.map((item, index) => (
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div 
+            className="overflow-x-auto scroll-smooth mx-12 scrollbar-hide"
+            ref={containerRef}
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
+            {...handlers}
+          >
+            <motion.div
+              className="flex gap-8 w-max"
+              animate={controls}
+              style={{ x: 0 }}
+            >
+              {extendedCategories.map((item, idx) => (
                 <motion.div
-                  key={`${startIndex}-${index}`}
-                  initial={{ opacity: 0, x: 50 }} 
-                  animate={{ opacity: 1, x: 1 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.9, ease: "easeInOut" }}
-                  className="flex flex-col items-center text-center"
+                  key={`${item.title}-${idx}`}
+                  className="flex flex-col items-center text-center cursor-pointer group"
+                  style={{ minWidth: ITEM_WIDTH }}
+                  whileHover={{ y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="relative group">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+                  <div className="relative">
+                    <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white/80 shadow-xl group-hover:shadow-2xl transition-all duration-300 bg-white/10 backdrop-blur-sm">
                       <img
                         src={item.img}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>
-                    <div className="absolute inset-0 rounded-full bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <p className="text-white text-sm sm:text-base mt-3 font-medium truncate w-24 sm:w-28">
+
+                  <motion.p 
+                    className="text-white text-sm md:text-base mt-4 font-semibold drop-shadow-md px-2 group-hover:text-emerald-100 transition-colors duration-300"
+                    initial={{ opacity: 0.8 }}
+                    whileHover={{ opacity: 1 }}
+                  >
                     {item.title}
-                  </p>
+                  </motion.p>
                 </motion.div>
               ))}
-            </AnimatePresence>
+            </motion.div>
           </div>
         </div>
       </div>

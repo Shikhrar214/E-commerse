@@ -9,17 +9,16 @@ const banners = [
 
 function BannerSection() {
   const [index, setIndex] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % banners.length);
-    }, 9000); 
+    }, 9000);
     return () => clearInterval(timer);
   }, []);
 
-
   return (
-  
-     <div className="w-full h-[300px] sm:h-[450px] relative overflow-hidden " >
+    <div className="w-full h-[450px] sm:h-[650px] relative overflow-hidden group">
       <AnimatePresence mode="wait">
         <motion.img
           key={banners[index]}
@@ -29,12 +28,19 @@ function BannerSection() {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.9 }}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover transform transition-transform duration-1000 ease-in-out group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-125 group-hover:contrast-110"
         />
       </AnimatePresence>
+
+      {/* Side blur overlays (thicker) */}
+      <div className="absolute top-0 left-0 w-1/4 h-full bg-gradient-to-r from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
+
+      {/* Top and bottom blur overlays */}
+      <div className="absolute top-0 left-0 w-full h-1/6 bg-gradient-to-b from-black/30 via-transparent to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-1/6 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 pointer-events-none" />
     </div>
-    
-  )
+  );
 }
 
-export default BannerSection
+export default BannerSection;
