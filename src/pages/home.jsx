@@ -1,10 +1,15 @@
 import React from 'react'
-import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials } from '../index.js'
+import { 
+  // AllProducts,
+   Banner, WeeklySpecials,BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials,MeetTheMaestros, NewArrivals } from '../index.js'
 
 function home() {
   return (
     <div>
       <Banner/>
+      <MeetTheMaestros />
+      <WeeklySpecials />
+      <NewArrivals />
       <RoundedItemCatogery/>
       <HomeTopCards/>
       <HomeCardsWithDetails/>
@@ -12,7 +17,7 @@ function home() {
      <SupportBar/>
      </div>
       <BlogPge/>
-      <AllProducts/>
+      {/* <AllProducts/> */}
       <Testimonials/>
     </div>
   )

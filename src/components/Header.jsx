@@ -73,14 +73,36 @@ function Header() {
         <select className="bg-transparent text-white text-sm outline-none">
           <option>India (INR ₹)</option>
         </select>
+         <NavLink 
+        to="/login" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
         <FaUser className="cursor-pointer" />
+        </NavLink>
+ <NavLink 
+        to="favorites" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
         <FaHeart className="cursor-pointer" />
+        </NavLink>
+ <NavLink 
+        to="Cart" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
         <div className="relative cursor-pointer">
           <FaShoppingCart />
           <span className="absolute -top-2 -right-2 text-xs bg-gray-800 text-white rounded-full w-4 h-4 flex items-center justify-center">
-            9+
+            
           </span>
         </div>
+        </NavLink>
+
       </div>
     </div>
   </div>
@@ -105,7 +127,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -114,7 +136,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -123,7 +145,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -132,7 +154,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -141,7 +163,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -150,7 +172,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/all-products" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -159,13 +181,23 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/about" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
         >
           ABOUT US
         </NavLink>
+
+        <NavLink 
+        to="/contact" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          Contact US
+        </NavLink>
+        
       </nav>
 
       {/* Mobile Navigation with Framer Motion */}
@@ -249,7 +281,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="/about" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
