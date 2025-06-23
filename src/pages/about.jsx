@@ -46,6 +46,9 @@ const AboutPage = () => {
           By shopping with us, you're helping preserve centuries of handmade excellence.
         </p>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };

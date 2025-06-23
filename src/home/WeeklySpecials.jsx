@@ -128,7 +128,7 @@ const WeeklySpecials = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 bg-white p-8 rounded-2xl shadow-2xl transition-all">
           {/* Image */}
           <div className="w-full lg:w-1/2 h-80 overflow-hidden rounded-xl group">
-            <AnimatePresence custom={direction} mode="wait">
+            <AnimatePresence custom={direction} >
               <motion.img
                 key={product.image || "placeholder"}
                 src={
