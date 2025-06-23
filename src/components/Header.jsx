@@ -47,7 +47,7 @@ function Header() {
     </div>
 
     {/* Center: Brand Name  */}
-    <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0 sm:w-1/3 text-center">
+    <div className="absolute left-1/2 transform-translate-x-1/2 sm:static sm:translate-x-0 mb:w-1/4 text-center">
       <img
         src="/navbar/bgr.png"
         alt="AchiChiz"
