@@ -79,21 +79,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-        // <div className='flex flex-col items-center'>
-        //   <h2 className="text-white  text-lg font-semibold mb-4">Follow Us</h2>
-        //   <div className="flex space-x-4">
-        //     <a href="#" className="hover:text-white">
-        //       <Facebook fontSize="medium" />
-        //     </a>
-        //     <a href="#" className="hover:text-white">
-        //       <Instagram fontSize="medium" />
-        //     </a>
-        //     <a href="#" className="hover:text-white">
-        //       <Twitter fontSize="medium" />
-        //     </a>
-        //     <a href="#" className="hover:text-white">
-        //       <LinkedIn fontSize="medium" />
-        //     </a>
-        //   </div>
-        // </div>

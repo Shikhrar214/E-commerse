@@ -127,7 +127,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/all-products" 
+        to="bags" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -136,7 +136,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="all-products" 
+        to="basket" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -145,7 +145,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/all-products" 
+        to="home-decore" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -154,7 +154,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/all-products" 
+        to="kitchen" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -163,7 +163,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/all-products" 
+        to="best-seller" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -172,7 +172,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/all-products" 
+        to="accessories" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
         }
@@ -227,7 +227,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="bags" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -236,7 +236,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="basket" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -245,7 +245,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="home-decore" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -254,7 +254,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="kitchen" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -263,7 +263,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="best-seller" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -272,7 +272,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/" 
+        to="accessories" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }
@@ -281,7 +281,7 @@ function Header() {
         </NavLink>
 
         <NavLink 
-        to="/about" 
+        to="about" 
         className={({ isActive }) => 
           `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
         }

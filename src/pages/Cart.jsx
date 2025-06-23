@@ -1,5 +1,6 @@
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
+import { AllProductPage } from "../index.js";
 
 // Product list from AllProducts
 const allProducts = [
@@ -69,28 +70,7 @@ const CartPage = () => {
       {/* Related Products */}
       <div className="mt-12">
         <h3 className="text-2xl font-bold mb-4">You may also like</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {relatedProducts.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h4 className="font-semibold text-lg">{item.title}</h4>
-                <p className="text-sm text-gray-600">{item.description}</p>
-                <p className="font-bold text-gray-800 mt-2">₹{item.price}</p>
-                <button className="mt-2 bg-gray-500 text-white text-sm px-4 py-2 rounded hover:bg-gray-700">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+        <AllProductPage/>
       </div>
     </div>
   );

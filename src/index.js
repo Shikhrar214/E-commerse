@@ -8,8 +8,12 @@ export { default as SignOut } from './pages/SignOut.jsx';
 export {default as CartPage } from './pages/Cart.jsx';
 export { default as favoritespage } from './pages/Favpage.jsx';
 export { default as Contactpage } from './pages/contact.jsx';
-
-
+export { default as Assessories } from './pages/Accessories.jsx';
+export { default as Bags } from './pages/Bags.jsx';
+export { default as Basket } from './pages/Basket.jsx';
+export { default as BestSellers } from './pages/BestSeller.jsx';
+export { default as KitchenAndDining } from './pages/KitchenAndDining.jsx';
+export { default as HomeDecor } from './pages/HomeDecor.jsx';
 
 // components
 export { default as Header } from './components/Header.jsx';
