@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router"
-import { About, AllProductPage, CartPage, Home, Layout, Login, Contactpage,SignOut, Productpage , Signup, Bags,Assessories, Basket, HomeDecor, KitchenAndDining, BestSellers } from "./index.js";
+import { About, AllProductPage, CartPage, Home, Layout, Login, Contactpage,SignOut, Productpage , Signup, Bags,Assessories, Basket, HomeDecor, KitchenAndDining, BestSellers, } from "./index.js";
 import FavoritesPage from "./pages/Favpage.jsx";
 
 

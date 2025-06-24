@@ -33,6 +33,7 @@ export { default as Testimonials } from './home/Testimonials.jsx'
 export { default as WeeklySpecials } from './home/WeeklySpecials.jsx';
 export {default as MeetTheMaestros} from './home/MeetTheMaestros.jsx'
 export {default as NewArrivals} from './home/NewArrivals.jsx'
+export {default as CustomerSupp } from './home/CustomerSupport.jsx'
 
 
 // all products

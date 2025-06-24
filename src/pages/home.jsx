@@ -1,12 +1,13 @@
 import React from 'react'
 import { 
   // AllProducts,
-   Banner, WeeklySpecials,BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials,MeetTheMaestros, NewArrivals } from '../index.js'
+   Banner , WeeklySpecials,BlogPge,  CustomerSupp, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials,MeetTheMaestros, NewArrivals } from '../index.js'
 
 function home() {
   return (
     <div>
       <Banner/>
+      <CustomerSupp />
       <MeetTheMaestros />
       <WeeklySpecials />
       <NewArrivals />
