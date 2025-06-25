@@ -14,6 +14,10 @@ export { default as Basket } from './pages/Basket.jsx';
 export { default as BestSellers } from './pages/BestSeller.jsx';
 export { default as KitchenAndDining } from './pages/KitchenAndDining.jsx';
 export { default as HomeDecor } from './pages/HomeDecor.jsx';
+export { default as Blog } from './pages/Blog.jsx';
+
+
+
 
 // components
 export { default as Header } from './components/Header.jsx';
@@ -33,6 +37,7 @@ export { default as Testimonials } from './home/Testimonials.jsx'
 export { default as WeeklySpecials } from './home/WeeklySpecials.jsx';
 export {default as MeetTheMaestros} from './home/MeetTheMaestros.jsx'
 export {default as NewArrivals} from './home/NewArrivals.jsx'
+export {default as CustomerSupp } from './home/CustomerSupport.jsx'
 
 
 // all products

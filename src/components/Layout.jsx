@@ -1,17 +1,22 @@
-import React from 'react'
-import { Outlet } from 'react-router'
-import { Footer, Header} from "../index.js"
+import React from "react";
+import { Outlet, useLocation } from "react-router";
+import { Footer, Header } from "../index.js";
 
 function Layout() {
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login"; //ture
+
   return (
     <div>
-        <Header/>
+      {!isLoginPage && <Header />}
 
-        <Outlet/>
+      <Outlet />
 
-        <Footer/>
+      
+
+      {!isLoginPage && <Footer />}
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

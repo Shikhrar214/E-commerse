@@ -80,7 +80,7 @@ const RoundedItemCategory = () => {
           >
             <motion.div
               className="flex gap-8 w-max"
-              animate={controls}
+              animate={controls} 
               style={{ x: 0 }}
             >
               {extendedCategories.map((item, idx) => (
