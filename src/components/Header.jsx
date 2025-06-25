@@ -1,293 +1,179 @@
 import React, { useState } from 'react';
-import {
-  FaSearch,
-  FaUser,
-  FaHeart,
-  FaShoppingCart,
-  FaBars,
-  FaTimes,
-} from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion';
 
-function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const navStructure = [
+  {
+    label: 'Badges & Trophy',
+    path: '/badges-trophy',
+    subCategories: [
+      {
+        label: 'Acrylic',
+        products: [
+          { label: 'Acrylic Momento', path: '/badges-trophy/acrylic-momento' },
+          { label: 'Acrylic Trophy', path: '/badges-trophy/acrylic-trophy' },
+        ],
+      },
+      {
+        label: 'Badges',
+        products: [
+          { label: 'Badges', path: '/badges-trophy/badges' },
+          { label: 'Badges Wedding', path: '/badges-trophy/badges-wedding' },
+        ],
+      },
+      {
+        label: 'Others',
+        products: [
+          { label: 'Desk Organizer', path: '/badges-trophy/desk-organizer' },
+          { label: 'Trophy', path: '/badges-trophy/trophy' },
+          { label: 'Wooden Trophy', path: '/badges-trophy/wooden-trophy' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Birthday & Wedding',
+    path: '/birthday-wedding',
+    subCategories: [
+      {
+        label: 'Anniversary Gifts',
+        products: [
+          { label: 'Anniversary Gift', path: '/birthday-wedding/anniversary-gift' },
+          { label: 'Wedding Plaque', path: '/birthday-wedding/wedding-plaque' },
+        ],
+      },
+      {
+        label: 'Acrylic',
+        products: [
+          { label: '3D Doctor Lamp', path: '/birthday-wedding/3d-doctor-lamp' },
+          { label: 'Customized Standy', path: '/birthday-wedding/custom-standy' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Cake Top',
+    path: '/cake-top',
+    products: [
+      { label: 'Cake Top', path: '/cake-top/plain' },
+      { label: 'Customized Acrylic Cake Top', path: '/cake-top/custom' },
+    ],
+  },
+  {
+    label: 'Corporate Gifts',
+    path: '/corporate-gifts',
+    products: [
+      { label: 'Bottle', path: '/corporate-gifts/bottle' },
+      { label: 'Customized Mug', path: '/corporate-gifts/mug' },
+    ],
+  },
+  {
+    label: 'Cushion & Pillow',
+    path: '/cushion-pillow',
+    products: [
+      { label: 'Customized Fur Kushan Print', path: '/cushion-pillow/fur-kushan' },
+      { label: 'Face Cushion', path: '/cushion-pillow/face' },
+    ],
+  },
+  {
+    label: 'Customized Clock',
+    path: '/customized-clock',
+    products: [
+      { label: 'Customized Wall Clock', path: '/customized-clock/wall' },
+      { label: 'Wooden Clock', path: '/customized-clock/wooden' },
+    ],
+  },
+  {
+    label: 'Decoration Items',
+    path: '/decoration-items',
+    products: [
+      { label: 'Neon Logo', path: '/decoration-items/neon-logo' },
+      { label: 'Wall Art Ganesh Ji', path: '/decoration-items/ganesh-art' },
+    ],
+  },
+  {
+    label: 'Photo Frame',
+    path: '/photo-frame',
+    products: [
+      { label: 'Birthday Frame', path: '/photo-frame/birthday' },
+      { label: 'Spotify Frame', path: '/photo-frame/spotify' },
+    ],
+  },
+];
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
- 
+function HeaderNav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const toggleMobile = () => setMobileOpen(!mobileOpen);
 
   return (
-    <header className="w-full shadow-md flex flex-col ">
-      {/* Top Notice Bar */}
-      <div className="bg-gray-800 text-white text-sm py-1 text-center flex justify-center items-center gap-2">
-        <span className="text-lg">←</span>
-        <span>Free Home Shipping above 5000</span>
-        <span className="text-lg">→</span>
+    <header className="bg-[#9c3911] text-white w-full z-50">
+      <div className="flex justify-between items-center px-4 py-3">
+        <h1 className="text-lg font-bold">AchiChiz</h1>
+        <button className="sm:hidden text-2xl" onClick={toggleMobile}>
+          {mobileOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
 
-      {/* Main Header */}
-  <div className="bg-[#9c3911] px-4 py-3 relative">
-  <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-4">
-    
-    {/* Hamburger - Mobile only */}
-    <div className="text-white text-xl sm:hidden cursor-pointer" onClick={toggleMobileMenu}>
-      {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-    </div>
-
-    {/* Left: Logo */}
-    <div className="flex items-center sm:w-1/6">
-      <img
-        src="/navbar/logo.png"
-        alt="logo"
-        className="h-6 sm:h-16 w-auto object-contain"
-      />
-    </div>
-
-    {/* Center: Brand Name  */}
-    <div className="absolute left-1/2 transform-translate-x-1/2 sm:static sm:translate-x-0 mb:w-1/4 text-center">
-      <img
-        src="/navbar/bgr.png"
-        alt="AchiChiz"
-        className="h-10 sm:h-14 w-auto object-contain mx-auto"
-      />
-    </div>
-
-    {/* Right Section: Search + Icons together */}
-    <div className="flex items-center justify-end gap-3 sm:w-1/2 w-full mt-2 sm:mt-0">
-      
-      {/* Search */}
-      <div className="flex items-center   gap-2 flex-1">
-        <FaSearch className="text-white" />
-        <input
-          type="text"
-          placeholder="What are you looking for?"
-          className="w-full bg-transparent border-b border-white placeholder-white text-white focus:outline-none"
-        />
-      </div>
-
-      {/* Icons */}
-      <div className="flex items-center gap-3 text-white">
-        <select className="bg-transparent text-white text-sm outline-none">
-          <option>India (INR ₹)</option>
-        </select>
-         <NavLink 
-        to="/login" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-        <FaUser className="cursor-pointer" />
-        </NavLink>
- <NavLink 
-        to="favorites" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-        <FaHeart className="cursor-pointer" />
-        </NavLink>
- <NavLink 
-        to="Cart" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-        <div className="relative cursor-pointer">
-          <FaShoppingCart />
-          <span className="absolute -top-2 -right-2 text-xs bg-gray-800 text-white rounded-full w-4 h-4 flex items-center justify-center">
-            
-          </span>
-        </div>
-        </NavLink>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-      {/* Desktop Navigation */}
-      <nav className="hidden sm:flex bg-[#8b2f0b] text-white text-sm py-2 px-4 sm:px-8 justify-center gap-6">
-        {/* {navItems.map((item, i) => (
-          <a key={i} href="#" className="hover:underline">
-            {item}
-          </a>
-        ))} */}
-        <NavLink 
-        to="/" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          Home
-        </NavLink>
-
-        <NavLink 
-        to="bags" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          BAGS
-        </NavLink>
-
-        <NavLink 
-        to="basket" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          BASKETS
-        </NavLink>
-
-        <NavLink 
-        to="home-decore" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          HOME DECOR
-        </NavLink>
-
-        <NavLink 
-        to="kitchen" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          KITCHEN & DINING
-        </NavLink>
-
-        <NavLink 
-        to="best-seller" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          BEST SELLER
-        </NavLink>
-
-        <NavLink 
-        to="accessories" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          ACCESSORIES
-        </NavLink>
-
-        <NavLink 
-        to="/about" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          ABOUT US
-        </NavLink>
-
-        <NavLink 
-        to="/contact" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
-        }
-        >
-          Contact US
-        </NavLink>
-        
+      {/* Desktop */}
+      <nav className="hidden sm:flex gap-4 justify-center bg-[#8b2f0b] p-2">
+        {navStructure.map((item) => (
+          <div className="group relative" key={item.label}>
+            <NavLink to={item.path} className="hover:underline">
+              {item.label}
+            </NavLink>
+            {(item.subCategories || item.products) && (
+              <div className="absolute hidden group-hover:flex flex-col bg-white text-black rounded shadow p-2 top-full min-w-[12rem] z-50">
+                {(item.subCategories || []).map((cat) => (
+                  <div key={cat.label}>
+                    <div className="font-bold px-2 py-1">{cat.label}</div>
+                    {cat.products.map((prod) => (
+                      <NavLink to={prod.path} key={prod.label} className="block px-4 py-1 hover:bg-orange-100">
+                        {prod.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                ))}
+                {(item.products || []).map((prod) => (
+                  <NavLink to={prod.path} key={prod.label} className="block px-4 py-1 hover:bg-orange-100">
+                    {prod.label}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </nav>
 
-      {/* Mobile Navigation with Framer Motion */}
+      {/* Mobile */}
       <AnimatePresence>
-        {mobileMenuOpen && (
+        {mobileOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="sm:hidden bg-[#8b2f0b] text-white text-sm flex flex-col px-4 py-2 space-y-2 overflow-hidden"
+            className="flex flex-col sm:hidden bg-[#8b2f0b] p-4 gap-2"
           >
-            {/* {navItems.map((item, i) => (
-              <a key={i} href="#" className="py-1 border-b border-white/20">
-                {item}
-              </a>
-            ))} */}
-
-
-<NavLink 
-        to="/" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          Home
-        </NavLink>
-
-        <NavLink 
-        to="bags" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          BAGS
-        </NavLink>
-
-        <NavLink 
-        to="basket" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          BASKETS
-        </NavLink>
-
-        <NavLink 
-        to="home-decore" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          HOME DECOR
-        </NavLink>
-
-        <NavLink 
-        to="kitchen" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          KITCHEN & DINING
-        </NavLink>
-
-        <NavLink 
-        to="best-seller" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          BEST SELLER
-        </NavLink>
-
-        <NavLink 
-        to="accessories" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          ACCESSORIES
-        </NavLink>
-
-        <NavLink 
-        to="about" 
-        className={({ isActive }) => 
-          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
-        }
-        >
-          ABOUT US
-        </NavLink>
+            {navStructure.map((item) => (
+              <div key={item.label}>
+                <div className="font-semibold text-white border-b border-white/20 pb-1">{item.label}</div>
+                {(item.subCategories || []).map((cat) => (
+                  <div key={cat.label} className="pl-4">
+                    <div className="text-orange-200 py-1">{cat.label}</div>
+                    {cat.products.map((prod) => (
+                      <NavLink to={prod.path} key={prod.label} className="block py-1 pl-2 text-white/80 hover:text-orange-300">
+                        {prod.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                ))}
+                {(item.products || []).map((prod) => (
+                  <NavLink to={prod.path} key={prod.label} className="block py-1 pl-2 text-white/80 hover:text-orange-300">
+                    {prod.label}
+                  </NavLink>
+                ))}
+              </div>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
@@ -295,4 +181,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderNav;
