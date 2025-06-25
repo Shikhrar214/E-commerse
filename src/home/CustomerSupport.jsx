@@ -5,12 +5,21 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 
 function CustomerSupport() {
   return (
-    <div className='flex items-end justify-around m-2 p-2 text-3xl'>
-      <div className='flex flex-row gap-4 itmes-center'><CiDeliveryTruck />ALL India Shipping</div>
-     <div className='flex flex-row gap-4'><BiSupport />24x7 Customer Support</div>
-      <div className='flex flex-row gap-4'><RiSecurePaymentLine />Secure payment</div>
-    </div>
-  )
-}
+<div className="flex flex-col md:flex-row justify-between items-center m-4 p-4 text-sm sm:text-base md:text-lg bg-white shadow-lg rounded-xl divide-y md:divide-y-0 md:divide-x divide-gray-300">
+  <div className="flex items-center gap-2 py-2 md:py-0 md:px-6">
+    <CiDeliveryTruck className="text-xl" />
+    <span>ALL India Shipping</span>
+  </div>
+  <div className="flex items-center gap-2 py-2 md:py-0 md:px-6">
+    <BiSupport className="text-xl" />
+    <span>24x7 Customer Support</span>
+  </div>
+  <div className="flex items-center gap-2 py-2 md:py-0 md:px-6">
+    <RiSecurePaymentLine className="text-xl" />
+    <span>Secure Payment</span>
+  </div>
+</div>
 
+)
+}
 export default CustomerSupport;
