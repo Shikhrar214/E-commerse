@@ -35,36 +35,32 @@ const newArrivals = [
 
 export default function NewArrivals() {
   return (
-    <section className="w-full px-4 sm:px-6 py-12 sm:py-16 bg-[#f9f1e7]">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center text-[#a4552f]">
-          New Arrivals
-        </h2>
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-1 auto-rows-[150px] px-4 sm:px-6 md:px-20 py-10">
+  {newArrivals.map((item, index) => (
+    <div
+      key={index}
+      className={`relative group overflow-hidden rounded-xl shadow-md cursor-pointer 
+        ${index % 5 === 0 ? 'col-span-2 row-span-1' : 'row-span-2 col-span-1'}
+      `}
+    >
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-full h-full object-cover transform duration-500 group-hover:scale-110"
+      />
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {newArrivals.map((item, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden rounded-xl shadow-md cursor-pointer"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-52 sm:h-64 object-cover transform duration-500 group-hover:scale-110"
-              />
+      {/* Gradient overlay */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#443202] to-transparent z-10"></div>
 
-              {/* Bottom fade effect */}
-              <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#f9f1e7] to-transparent z-10"></div>
-
-              {/* Hover popup */}
-             <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4 text-black opacity-100 sm:opacity-0 group-hover:opacity-100 transition duration-500 z-20">
-                <h3 className="text-base sm:text-lg font-semibold">{item.name}</h3>
-                <p className="text-xs sm:text-sm">{item.info}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Info text */}
+      <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4 text-black opacity-100 sm:opacity-0 group-hover:opacity-100 transition duration-500 z-20">
+        <h3 className="text-base sm:text-lg font-semibold">{item.name}</h3>
+        <p className="text-xs sm:text-sm">{item.info}</p>
       </div>
-    </section>
+    </div>
+  ))}
+</div>
+
+
   );
 }

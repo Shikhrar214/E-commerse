@@ -8,6 +8,12 @@ export { default as SignOut } from './pages/SignOut.jsx';
 export {default as CartPage } from './pages/Cart.jsx';
 export { default as favoritespage } from './pages/Favpage.jsx';
 export { default as Contactpage } from './pages/contact.jsx';
+export { default as Assessories } from './pages/Accessories.jsx';
+export { default as Bags } from './pages/Bags.jsx';
+export { default as Basket } from './pages/Basket.jsx';
+export { default as BestSellers } from './pages/BestSeller.jsx';
+export { default as KitchenAndDining } from './pages/KitchenAndDining.jsx';
+export { default as HomeDecor } from './pages/HomeDecor.jsx';
 export { default as Blog } from './pages/Blog.jsx';
 
 
@@ -31,6 +37,7 @@ export { default as Testimonials } from './home/Testimonials.jsx'
 export { default as WeeklySpecials } from './home/WeeklySpecials.jsx';
 export {default as MeetTheMaestros} from './home/MeetTheMaestros.jsx'
 export {default as NewArrivals} from './home/NewArrivals.jsx'
+export {default as CustomerSupp } from './home/CustomerSupport.jsx'
 
 
 // all products

@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router"
+import { About, AllProductPage, CartPage, Home, Layout, Login, Contactpage,SignOut, Productpage , Signup, Bags,Assessories, Basket, HomeDecor, KitchenAndDining, BestSellers, } from "./index.js";
 import { About, AllProductPage, CartPage, Home, Layout, Login, Contactpage,SignOut, Productpage , Signup , Blog } from "./index.js";
 import FavoritesPage from "./pages/Favpage.jsx";
 // import { About, AllProductPage, Home, Layout, Login, SignOut, Signup } from "./index.js";
@@ -26,6 +27,12 @@ function App() {
         {path: "favorites", element: <FavoritesPage/>}, 
         {path: "contact", element: <Contactpage/>},
         {path: "productdetails", element: <Productpage />},
+        {path: "bags", element: <Bags/>},
+        {path: "basket", element: <Basket/>},
+        {path: "home-decore", element: <HomeDecor/>},
+        {path: "kitchen", element: <KitchenAndDining/>},
+        {path: "best-seller", element: <BestSellers/>},
+        {path: "accessories", element: <Assessories/>}
         {path: "category", element: <Category/>}, 
         {path: "blog", element: <Blog />}
 

@@ -60,14 +60,14 @@ function Header() {
             />
           </div>
 
-          {/* Center: Brand Name */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0 sm:w-1/3 text-center">
-            <img
-              src="/navbar/bgr.png"
-              alt="AchiChiz"
-              className="h-10 sm:h-14 w-auto object-contain mx-auto"
-            />
-          </div>
+    {/* Center: Brand Name  */}
+    <div className="absolute left-1/2 transform-translate-x-1/2 sm:static sm:translate-x-0 mb:w-1/4 text-center">
+      <img
+        src="/navbar/bgr.png"
+        alt="AchiChiz"
+        className="h-10 sm:h-14 w-auto object-contain mx-auto"
+      />
+    </div>
 
           {/* Right Section: Search + Icons */}
           <div className="flex items-center justify-end gap-3 sm:w-1/2 w-full mt-2 sm:mt-0">
@@ -125,17 +125,92 @@ function Header() {
 
       {/* Desktop Navigation */}
       <nav className="hidden sm:flex bg-[#8b2f0b] text-white text-sm py-2 px-4 sm:px-8 justify-center gap-6">
-        {navItems.map((item, i) => (
-          <NavLink
-            key={i}
-            to={item.to}
-            className={({ isActive }) =>
-              `hover:underline ${isActive ? "text-orange-300" : ""} transition-colors duration-300`
-            }
-          >
-            {item.name}
-          </NavLink>
-        ))}
+        {/* {navItems.map((item, i) => (
+          <a key={i} href="#" className="hover:underline">
+            {item}
+          </a>
+        ))} */}
+        <NavLink 
+        to="/" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          Home
+        </NavLink>
+
+        <NavLink 
+        to="bags" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          BAGS
+        </NavLink>
+
+        <NavLink 
+        to="basket" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          BASKETS
+        </NavLink>
+
+        <NavLink 
+        to="home-decore" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          HOME DECOR
+        </NavLink>
+
+        <NavLink 
+        to="kitchen" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          KITCHEN & DINING
+        </NavLink>
+
+        <NavLink 
+        to="best-seller" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          BEST SELLER
+        </NavLink>
+
+        <NavLink 
+        to="accessories" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          ACCESSORIES
+        </NavLink>
+
+        <NavLink 
+        to="/about" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          ABOUT US
+        </NavLink>
+
+        <NavLink 
+        to="/contact" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300`
+        }
+        >
+          Contact US
+        </NavLink>
+        
       </nav>
 
       {/* Mobile Navigation */}
@@ -148,18 +223,84 @@ function Header() {
             transition={{ duration: 0.3 }}
             className="sm:hidden bg-[#8b2f0b] text-white text-sm flex flex-col px-4 py-2 space-y-2 overflow-hidden"
           >
-            {navItems.map((item, i) => (
-              <NavLink
-                key={i}
-                to={item.to}
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `hover:underline ${isActive ? "text-orange-300" : ""} transition-colors duration-300 py-1 border-b border-white/20`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
+            {/* {navItems.map((item, i) => (
+              <a key={i} href="#" className="py-1 border-b border-white/20">
+                {item}
+              </a>
+            ))} */}
+
+
+<NavLink 
+        to="/" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          Home
+        </NavLink>
+
+        <NavLink 
+        to="bags" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          BAGS
+        </NavLink>
+
+        <NavLink 
+        to="basket" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          BASKETS
+        </NavLink>
+
+        <NavLink 
+        to="home-decore" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          HOME DECOR
+        </NavLink>
+
+        <NavLink 
+        to="kitchen" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          KITCHEN & DINING
+        </NavLink>
+
+        <NavLink 
+        to="best-seller" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          BEST SELLER
+        </NavLink>
+
+        <NavLink 
+        to="accessories" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          ACCESSORIES
+        </NavLink>
+
+        <NavLink 
+        to="about" 
+        className={({ isActive }) => 
+          `hover:underline ${isActive ? 'text-orange-300' : ''} transition-colors duration-300 py-1 border-b border-white/20`
+        }
+        >
+          ABOUT US
+        </NavLink>
           </motion.div>
         )}
       </AnimatePresence>

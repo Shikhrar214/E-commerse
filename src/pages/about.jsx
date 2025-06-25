@@ -110,6 +110,9 @@ const AboutPage = () => {
           excellence.
         </p>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };

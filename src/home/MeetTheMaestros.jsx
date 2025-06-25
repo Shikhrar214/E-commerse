@@ -80,7 +80,7 @@ export default function MeetTheMaestros() {
         <div className="space-y-8">
           <div>
             <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <span className="text-sm font-medium">✨ Master Artisans</span>
+              <span className="text-sm font-medium"> Master Artisans</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight bg-gradient-to-r from-white to-orange-100 bg-clip-text text-transparent">
               Timeless Masterpieces Created by{" "}
