@@ -8,6 +8,8 @@ export { default as SignOut } from './pages/SignOut.jsx';
 export {default as CartPage } from './pages/Cart.jsx';
 export { default as favoritespage } from './pages/Favpage.jsx';
 export { default as Contactpage } from './pages/contact.jsx';
+export { default as Blog } from './pages/Blog.jsx';
+
 
 
 

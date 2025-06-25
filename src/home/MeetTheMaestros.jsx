@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { NavLink } from "react-router";
 
 const maestros = [
   {
@@ -111,9 +112,15 @@ export default function MeetTheMaestros() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-gradient-to-r from-[#a4552f] to-[#8b4526] text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold">
+            
+            <NavLink 
+            to="/blog">
+              
+              <button className="bg-gradient-to-r from-[#a4552f] to-[#8b4526] text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold">
               LEARN MORE
             </button>
+            </NavLink>
+            
             <button className="border-2 border-white/30 text-white px-8 py-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white hover:text-[#a4552f] transition-all duration-300 font-semibold">
               MEET ALL MAESTROS
             </button>

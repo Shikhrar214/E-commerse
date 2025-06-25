@@ -1,9 +1,9 @@
 import React from 'react'
 import { 
-  // AllProducts,
+  AllProducts,
    Banner, WeeklySpecials,BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials,MeetTheMaestros, NewArrivals } from '../index.js'
-import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials } from '../index.js'
-// import AutoSlider from '../category/autoslider.jsx'
+// import { AllProducts, Banner, BlogPge, HomeCardsWithDetails, HomeTopCards, RoundedItemCatogery, SupportBar, Testimonials } from '../index.js'
+
 
 function home() {
   return (
@@ -21,7 +21,7 @@ function home() {
       <BlogPge/>
       {/* <AllProducts/> */}
       <Testimonials/>
-      <AutoSlider/>
+    
     </div>
   )
 }

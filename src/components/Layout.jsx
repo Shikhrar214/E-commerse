@@ -12,6 +12,8 @@ function Layout() {
 
       <Outlet />
 
+      
+
       {!isLoginPage && <Footer />}
     </div>
   );
